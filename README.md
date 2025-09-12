@@ -1,4 +1,4 @@
-# <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -8,49 +8,43 @@
       font-family: Arial, sans-serif;
       text-align: center;
       background-color: #f4f4f9;
-      margin: 40px;
+      margin: 20px;
     }
     h1 {
-      font-size: 2.5em;
+      font-size: 2em;
       color: #2c3e50;
     }
     p {
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
-    table {
-      margin: 20px auto;
-      border-collapse: collapse;
-      width: 80%;
+    .pdf-container {
+      margin-top: 20px;
+      width: 100%;
+      height: 70vh; /* usa il 70% dell’altezza visibile */
     }
-    th, td {
-      border: 1px solid #555;
-      padding: 10px;
-      text-align: center;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
-    th {
-      background-color: #2c3e50;
-      color: white;
+
+    /* Regole speciali per schermi piccoli */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6em;
+      }
+      .pdf-container {
+        height: 60vh; /* più basso su smartphone */
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Benvenuto!</h1>
-  <p>Qui troverai gli orari della navetta di Malpensa.</p>
+  <h1>Orari Navetta Malpensa</h1>
+  <p>Consulta direttamente gli orari qui sotto 👇</p>
 
-  <h2>Orari</h2>
-  <table>
-    <tr>
-      <th>Partenza</th>
-      <th>Arrivo</th>
-    </tr>
-    <tr>
-      <td>05:00</td>
-      <td>05:30</td>
-    </tr>
-    <tr>
-      <td>06:00</td>
-      <td>06:30</td>
-    </tr>
-  </table>
+  <div class="pdf-container">
+    <iframe src="linee navetta.pdf"></iframe>
+  </div>
 </body>
 </html>
